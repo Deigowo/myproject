@@ -19,8 +19,14 @@ def about_us():
 def layout():
     return render_template('layout.html')
 
+@app.route("/dashboard")
+def dashboard():
+    titulo = "Panel de administración"
+    return render_template('dashboard.html', titulo=titulo)
+
 def page_not_found(error):
     return render_template('error.html')
+
 
 if __name__ == "__main__":
     app.register_error_handler(404, page_not_found)
